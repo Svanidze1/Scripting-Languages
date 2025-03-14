@@ -1,0 +1,150 @@
+:root {
+  --PrimaryColor: hsl(120, 100%, 33%); 
+  --SecondaryColor: hsl(85, 85%, 43%); 
+  --gradientColor: linear-gradient(to right, hsl(85, 85%, 43%), hsl(120, 100%, 33%)); 
+  --whiteColor: hsl(0, 0%, 100%); 
+  --blackcolor: hsl(135, 20%, 15%); 
+  --textColor: hsl(120, 4%, 36%); 
+  --whiteColorDeam: hsl(0, 0%, 93%); 
+  --greyText: rgb(180, 180, 180); 
+  --inputColor: rgb(239, 239, 239); 
+  --bodyColor: rgb(240, 240, 240); 
+  --cardBG: rgb(230, 230, 220); 
+}
+
+.main {
+  width: 100%;
+}
+.main .secTitle .title {
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  color: var(--textColor);
+  margin: 1rem 0;
+  z-index: 2;
+}
+.main .secTitle .title::after {
+  position: absolute;
+  content: "";
+  background: var(--SecondaryColor);
+  height: 5px;
+  width: 120px;
+  right: 0;
+  bottom: 5px;
+  z-index: -1;
+}
+.main .seeContent {
+  justify-content: center;
+  gap: 1.5rem;
+}
+.main .seeContent .singleDestination {
+  height: 100%;
+  display: grid;
+  row-gap: 10px;
+  padding: 1rem;
+  border-radius: 10px;
+  align-items: center;
+  background: var(--cardBG);
+  box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+  overflow: hidden;
+}
+.main .seeContent .singleDestination:hover {
+  background: var(--cardHover);
+  box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+  transition: 0.3s ease;
+}
+.main .seeContent .singleDestination .imageDiv {
+  height: 180px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.main .seeContent .singleDestination .imageDiv img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 2s ease;
+}
+.main .seeContent .singleDestination .imageDiv:hover img {
+  transform: scale(1.1);
+}
+.main .seeContent .singleDestination .cardInfo {
+  padding: 1rem;
+}
+.main .seeContent .singleDestination .cardInfo .destTitle {
+  color: var(--blackcolor);
+  font-size: 1.25rem;
+}
+.main .seeContent .singleDestination .cardInfo .continent {
+  gap: 0.5rem;
+}
+.main .seeContent .singleDestination .cardInfo .continent .icon {
+  color: var(--textColor);
+  font-size: 18px;
+}
+.main .seeContent .singleDestination .cardInfo .continent .name {
+  color: var(--textColor);
+  font-weight: 400;
+  font-size: 14px;
+}
+.main .seeContent .singleDestination .cardInfo .fees {
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-top: 1.5px solid var(--greyText);
+  border-bottom: 1.5px solid var(--greyText);
+}
+.main .seeContent .singleDestination .cardInfo .fees .grade {
+  color: var(--textColor);
+  max-width: 100px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.main .seeContent .singleDestination .cardInfo .fees .price {
+  font-size: 2rem;
+  color: var(--blackcolor);
+}
+.main .seeContent .singleDestination .cardInfo .desc {
+  font-size: 13.5px;
+  color: var(--textColor);
+  font-weight: 500;
+}
+.main .seeContent .singleDestination .cardInfo .btn {
+  margin-top: 1rem;
+  color: var(--whiteColor);
+  font-weight: 600;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.main .seeContent .singleDestination .cardInfo .btn .icon {
+  align-self: center;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 500px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .title::after {
+    width: 155px !important;
+  }
+  .seeContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .seeContent .singleDestination {
+    height: auto;
+  }
+}
+@media screen and (min-width: 800px) {
+  .seeContent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .seeContent .singleDestination {
+    height: auto;
+  }
+}

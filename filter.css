@@ -1,0 +1,52 @@
+.filter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-inputs input{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+}
+
+.filter-body{
+    margin-bottom: 50px;
+}
+
+.filter-inputs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.line{
+    width: 20px;
+    height: 1px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.filter-inputs button {
+    padding: 5px;
+    background-color: green;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.filter-inputs button:hover{
+    background-color: rgba(0, 128, 0, 0.78);
+}
+
+.filter-select select{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+}

@@ -1,0 +1,226 @@
+:root{
+    --PrimaryColor: hsl(120, 100%, 33%); 
+    --SecondaryColor: hsl(85, 85%, 43%); 
+    --gradientColor: linear-gradient(to right, hsl(85, 85%, 43%), hsl(120, 100%, 33%)); 
+    --whiteColor: hsl(0, 0%, 100%); 
+    --blackColor: hsl(135, 20%, 15%); 
+    --textColor: hsl(120, 4%, 36%); 
+    --whiteColorDeam: hsl(0, 0%, 93%); 
+    --greyText: rgb(180, 180, 180); 
+    --inputColor: rgb(239, 239, 239); 
+    --bodyColor: rgb(240, 240, 240); 
+    --cardBG: rgb(230, 230, 220); 
+}
+
+
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--whiteColor);
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.167);
+    .logo{
+        color: var(--blackColor);
+        font-weight: 600;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        .icon{
+            font-size: 25px;
+            color: var(--PrimaryColor);
+            transform: translateY(5px);
+        }
+    }
+
+
+    @media screen and (max-width: 768px){
+        .navBar{
+            position: absolute;
+            background: var(--whiteColorDeam);
+            height: max-content;
+            width: 80%;
+            border-radius: 1rem;
+            padding: 1rem;
+            top: -50rem;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 2000;
+            box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+            transition: .5s ease-in-out;
+            
+            .navLists{
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                margin: auto;
+                padding: .5rem 0;
+        
+                .navItem{
+                    padding: .5rem 0;
+        
+                    .navLink{
+                        color: var(--textColor);
+                        font-size: .9rem;
+                        font-weight:600;
+                        &:hover{
+                            color: var(--PrimaryColor);
+                        }
+                    }
+                }
+        
+                .btn{
+                    margin-top: 1rem;
+        
+                    a{
+                        font-weight: 600;
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+
+            .closeNavbar{
+                position: absolute;
+                top: 1rem;
+                right: 1.5rem;
+                color: var(--PrimaryColor);
+                &:hover{
+                    color: var(--SecondaryColor);
+                }
+            }
+        }
+
+        .activeNavbar{
+            top: 7rem !important;
+        }
+    }
+
+    .toggleNavbar{
+        .icon{
+            font-size: 25px;
+            color: var(--PrimaryColor);
+        }
+        &:hover.icon{
+            color: var(--SecondaryColor);
+        }
+    }
+}
+
+.login-page{
+    top: 100px;
+    width: 460px;
+    margin: auto;
+
+    .form{
+        top: -50rem;
+        position: absolute;
+        z-index: 1000;
+        background: var(--whiteColor);
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: .5s ease-in-out;
+
+        .login-action{
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            
+        }
+
+
+        input{
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        
+        .message{
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+
+            a{
+                color: var(--PrimaryColor);
+                text-decoration: none;
+            }
+        }
+    }
+
+    .activeForm{
+        top: 15rem !important;
+    }
+
+}
+
+@media screen and (min-width: 769px){
+    .toggleNavbar, .closeNavbar{
+        display: none;
+    }
+
+    .activeForm{
+        top: 5rem !important;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+
+        .navBar{
+            .navLists{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+                .navItem{
+                    .navLink{
+                        color: var(--textColor);
+                        padding: 0 0.45rem;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+
+                        &:hover{
+                            color: var(--PrimaryColor);
+                        }
+                    }
+                }
+
+                .btn{
+                    margin-left: 1rem;
+                    a{
+                        color: var(--whiteColor);
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 960px){
+    .header{
+        .navBar{
+            .navLists{
+                .navItem{
+                    padding: 0 0.7rem;
+                }
+            }
+        }
+    }
+}
